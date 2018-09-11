@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Cats from './pages/cats';
 import NewCat from './pages/newcat';
-import { getCats } from './api'
+import { getCats } from './api';
+// import midnightCreeper from './midnightCreeper.jpg'
+let Img = require('react-image')
 
 class App extends Component {
   constructor(props){
@@ -35,7 +37,8 @@ class App extends Component {
   componentWillMount() {
           getCats()
           .then(APIcats => {
-              this.setState({cats: APIcats})
+              this.setState({
+                cats: APIcats})
           });
 
 
@@ -43,9 +46,8 @@ class App extends Component {
 
 
 
-//This is taking in a parameter addCat
+// This is taking in a parameter addCat
   handleNewCat(addCat){
-
 
   }
 
